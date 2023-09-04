@@ -20,7 +20,7 @@ class Sprite(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect()
 
-    #moving functions, names indicate direction (what moves, how much it moves)
+    # moving functions, names indicate direction (what moves, how much it moves)
     def moveRight(self, pixels):
         self.rect.x += pixels
 
@@ -90,18 +90,18 @@ def renderbuilding(build):
                 Wall((x,y))
            # moves block drawings along the x axis
            x = x + 50
-       # moves to next rw of blocks
+       # moves to next row of blocks
        y = y + 50
        x = 0
 
 # creating end square - when touched the player wins and restarts
 end_ = pygame.draw.rect(screen, (0,0,255), (50,0,50,50))
 
-#variable that indicates runtime - starts infinite while loop
+# variable that indicates runtime - starts infinite while loop
 running = 1
 # the clock will be used later to control the speed of running the loop
 clock = pygame.time.Clock()
-#game loop, what happens when it is running.
+# game loop, what happens when it is running.
 while running == 1:
     # background color (will be covered by maze, served as a test for configurations
     screen.fill((255, 0, 255))
@@ -154,10 +154,10 @@ while running == 1:
             player_.rect.y = 450
             player_.rect.x = 415
 
-    #making the changes appear on display
+    # making the changes appear on display
     all_sprites_list.update()
     all_sprites_list.draw(screen)
     pygame.display.flip()
 
-    #stabilizing sprite - controls loop speed
+    # stabilizing sprite - controls loop speed
     clock.tick(20)
